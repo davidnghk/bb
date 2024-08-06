@@ -1,0 +1,11 @@
+{
+  "environment": "development",
+  //"environment": "production",
+  "port": 3331,
+  "daemonize": true,
+  "user": "david_ng_hk",
+  // The following is for production multi-user
+  "max_pool_size": 5,
+  "pool_idle_time": 5,
+  "min_instances": 2
+}

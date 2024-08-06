@@ -1,0 +1,100 @@
+$spaceamounts: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 100);
+$sides: (top, bottom, left, right);
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+  .m-#{$space} {
+    margin: #{$space}px !important;
+  }
+
+  .p-#{$space} {
+    padding: #{$space}px !important;
+  }
+
+  .h-#{$space} {
+    margin-top: #{$space}px !important;
+    margin-bottom: #{$space}px !important;
+  }
+
+  .f-#{$space} {
+    font-size: #{$space}px !important;
+  }
+}
+
+.is-horizontal-center {
+  justify-content: center;
+}
+
+.small-title {
+  font-size: 10px;
+}
+
+.star-review {
+  color: #ffbf00;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.dropzone {
+  border: 2px dashed #0087F7 !important;
+  border-radius: 5px;
+  background: white;
+}
+
+.dropzone .dz-message {
+  font-weight: 400;
+}
+
+.dropzone .dz-message .note {
+  font-size: 0.8em;
+  font-weight: 200;
+  display: block;
+  margin-top: 1.4rem;
+}
+
+.form-container {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.pagination-link.is-current {
+  background-color: #00d1b2 !important;
+  border-color: #00d1b2 !important;
+}
+
+.has-bg-img {
+  background: url('/assets/home/background.jpg') center center;
+  background-size: cover;
+}
+
+.avatar {
+  position: relative;
+  display: inline-block;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: 1px solid white;
+  }
+
+  &.online:before {
+    background-color: #1dbf73;
+  }
+
+  &.offline:before {
+    background-color: gray;
+  }
+}
